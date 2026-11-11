@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SiftClean Admin</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <section class="login hidden" id="login">
+    <form class="login-card" id="loginForm" autocomplete="off">
+      <img src="assets/icon.png" alt="">
+      <h1>SiftClean Admin</h1>
+      <p>Enter the admin password to continue.</p>
+      <label class="field">
+        <svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>
+        <input type="password" id="password" placeholder="Password" required autofocus>
+      </label>
+      <button class="btn solid" type="submit" id="loginBtn">Sign in</button>
+      <div class="msg" id="loginMsg"></div>
+    </form>
+  </section>
+
+  <section class="dash hidden" id="dash">
+    <header class="top">
+      <div class="brand"><img src="assets/icon.png" alt=""><span>SiftClean</span><em>Admin</em></div>
+      <div class="seg" id="range">
+        <button data-days="7">7 days</button>
+        <button data-days="30" class="on">30 days</button>
+        <button data-days="90">90 days</button>
+      </div>
+      <div class="top-actions">
+        <span class="updated" id="updated"></span>
+        <button class="btn plain small" id="refresh">Refresh</button>
+        <button class="btn plain small" id="logout">Sign out</button>
+      </div>
+    </header>
+
+    <div class="heroes">
+      <div class="hero-tile"><span>Total users</span><b id="kUsers">–</b><small id="kUsersSub"></small></div>
+      <div class="hero-tile"><span>Data deleted with SiftClean</span><b id="kBytes">–</b><small id="kBytesSub"></small></div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><span>Active · 7 days</span><b id="kA7">–</b></div>
+      <div class="tile"><span>Active · 30 days</span><b id="kA30">–</b></div>
+      <div class="tile"><span>Scans</span><b id="kScans">–</b></div>
+      <div class="tile"><span>Deletions</span><b id="kDeletes">–</b></div>
+      <div class="tile"><span>App launches</span><b id="kLaunches">–</b></div>
+      <div class="tile"><span>Website downloads</span><b id="kDownloads">–</b></div>
+    </div>
+
+    <div class="charts">
+      <div class="panel wide"><div class="panel-head"><h2>Data deleted per day</h2><span id="sumBytes"></span></div><div class="chart" id="chBytes"></div><details><summary>Show table</summary><div class="table" id="tbBytes"></div></details></div>
+      <div class="panel"><div class="panel-head"><h2>New users per day</h2><span id="sumNew"></span></div><div class="chart" id="chNew"></div><details><summary>Show table</summary><div class="table" id="tbNew"></div></details></div>
+      <div class="panel"><div class="panel-head"><h2>Active users per day</h2><span id="sumActive"></span></div><div class="chart" id="chActive"></div><details><summary>Show table</summary><div class="table" id="tbActive"></div></details></div>
+      <div class="panel"><div class="panel-head"><h2>Platforms</h2></div><div class="bars" id="lsPlatforms"></div></div>
+      <div class="panel"><div class="panel-head"><h2>Languages</h2></div><div class="bars" id="lsLanguages"></div></div>
+      <div class="panel"><div class="panel-head"><h2>App versions</h2></div><div class="bars" id="lsVersions"></div></div>
+      <div class="panel"><div class="panel-head"><h2>Totals</h2></div><div class="bars" id="lsTotals"></div></div>
+    </div>
+  </section>
+
+  <section class="notice hidden" id="notice">
+    <img src="assets/icon.png" alt="">
+    <h1>Backend not configured</h1>
+    <p>Set the Google Apps Script web app URL as <code>api</code> in <code>js/config.js</code>.</p>
+  </section>
+
+  <div class="tip hidden" id="tip"></div>
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

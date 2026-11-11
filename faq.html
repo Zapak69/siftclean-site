@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – SiftClean</title>
+  <meta name="description" content="Answers to common questions about SiftClean, Smart Scan, deleting files, permissions and privacy.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt=""><span>SiftClean</span></a>
+    <nav class="links">
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html" class="on">FAQ</a>
+    </nav>
+    <a class="pill solid small nav-dl" href="#">Download</a>
+  </header>
+  <main class="doc wrap">
+    <h1>Frequently asked questions</h1>
+    <p class="updated" data-contact-line>Can’t find an answer? Write to <a data-contact href="#"></a>.</p>
+    <section class="faq-group">
+      <h2>General</h2>
+      <details><summary>Is SiftClean free?</summary><p>Yes. The Free plan lets you scan your whole disk, browse it in the Explorer and move files to the Trash – with no time limit and no account. Smart Scan, permanent deleting, last modified dates, highlighting of unused files and scanning a single folder are part of PRO and MAX. See <a href="pricing.html">Pricing</a>.</p></details>
+      <details><summary>What is the difference between PRO and MAX?</summary><p>Both unlock every feature. A PRO license works on 1 device, a MAX license works on up to 3 devices. You can pay monthly or once for a lifetime license.</p></details>
+      <details><summary>Which systems are supported?</summary><p>macOS 12 or later on Apple silicon and Intel Macs, and Windows 10 or 11 (64-bit).</p></details>
+      <details><summary>Which languages are available?</summary><p>English, Czech, Chinese, Hindi, Spanish, French, Portuguese, Russian, Japanese, German and Indonesian. The app picks your system language on first launch and you can change it in Settings.</p></details>
+      <details><summary>Can I scan an external drive?</summary><p>Yes. Pick the disk from the drive menu in the explorer, or choose any folder with the Folder button.</p></details>
+    </section>
+    <section class="faq-group">
+      <h2>Smart Scan</h2>
+      <details><summary>What does Smart Scan look for?</summary><p>App and browser caches, logs and crash reports, the Trash, developer caches (npm, Gradle, Cargo, Xcode and others), Mail attachments, system caches, installers in Downloads and local device backups.</p></details>
+      <details><summary>Is it safe to delete caches?</summary><p>Caches are temporary data that apps recreate when needed. An app may start a little slower the first time after cleaning. For the best result, quit the apps whose caches you are about to remove.</p></details>
+      <details><summary>Why are some categories not selected?</summary><p>System caches, installers, device backups and large AI models can be useful or hard to get back, so SiftClean lists them but leaves the decision to you.</p></details>
+      <details><summary>Why did the caches grow back?</summary><p>That’s normal. Apps keep caches to work faster. Running Smart Scan every few weeks is usually enough.</p></details>
+    </section>
+    <section class="faq-group">
+      <h2>Deleting</h2>
+      <details><summary>Can I undo a deletion?</summary><p>Items deleted permanently can’t be restored. If you want a safety net, choose “Move to Trash” in Settings – then you can restore items from the Trash or Recycle Bin.</p></details>
+      <details><summary>What happens to files that are in use?</summary><p>They are skipped. SiftClean deletes everything else and tells you how many files were left in place.</p></details>
+      <details><summary>Can I delete something important by accident?</summary><p>System folders, the root of each disk and your main user folders are protected. Every deletion is confirmed first unless you turn confirmations off.</p></details>
+      <details><summary>Can I stop a deletion that takes long?</summary><p>Yes. Long deletions show their progress and a Cancel button. What has already been deleted stays deleted.</p></details>
+    </section>
+    <section class="faq-group">
+      <h2>Permissions</h2>
+      <details><summary>Why does SiftClean need Full Disk Access on a Mac?</summary><p>macOS hides some folders from apps unless you grant Full Disk Access. Without it SiftClean can’t measure or clean those folders. You grant it in System Settings → Privacy &amp; Security → Full Disk Access.</p></details>
+      <details><summary>Why does Windows ask for administrator rights?</summary><p>With administrator rights SiftClean reads the NTFS file table directly, which makes a full scan many times faster, and it can clean system-wide temporary files.</p></details>
+      <details><summary>Why does my system warn about the download?</summary><p>The current builds are not signed with a developer certificate yet, so macOS and Windows show a warning the first time you open the app.</p></details>
+    </section>
+    <section class="faq-group">
+      <h2>Privacy</h2>
+      <details><summary>Does SiftClean upload my files?</summary><p>No. Scanning and deleting happen entirely on your computer. File names, paths and contents never leave it.</p></details>
+      <details><summary>What are anonymous statistics?</summary><p>If you allow it, the app sends counts such as how many times it was opened and how much space was freed. See the <a href="privacy.html">Privacy Policy</a> for the full list.</p></details>
+      <details><summary>How do I turn statistics off?</summary><p>Open Settings and switch off “Share analytics”. You can also turn it off during the first-run setup.</p></details>
+    </section>
+  </main>
+  <footer class="footer wrap">
+    <div class="foot-cols">
+      <div><b>Product</b><a href="pricing.html">Pricing</a><a href="index.html#smart-scan">Smart Scan</a><a href="index.html#explorer">Explorer</a><a href="index.html#safety">Safety</a></div>
+      <div><b>Download</b><a class="dl" data-platform="mac" href="#">Mac</a><a class="dl" data-platform="win" href="#">Windows</a></div>
+      <div><b>Help</b><a href="faq.html">FAQ</a><a data-contact-line data-contact href="#">Contact</a></div>
+      <div><b>Legal</b><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+    </div>
+    <div class="foot-bottom"><span class="copy">© 2026 SiftClean</span></div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
