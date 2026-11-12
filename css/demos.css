@@ -132,3 +132,6 @@
   .aw-scat, #exList .aw-row, .rbar i, .aw-row.del { transition: none; }
   #speedTile.play .cores i { animation: none; transform: scaleY(.6); }
 }
+.aw-cursor { position: absolute; z-index: 6; left: 600px; top: 380px; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: #f5f5f7; box-shadow: 0 0 0 6px rgba(245, 245, 247, .18), 0 4px 14px rgba(0, 0, 0, .5); opacity: 0; pointer-events: none; transition: left .8s cubic-bezier(.45, 0, .2, 1), top .8s cubic-bezier(.45, 0, .2, 1), opacity .3s, transform .15s; }
+.aw-cursor.on { opacity: 1; }
+.aw-cursor.press { transform: scale(.65); }

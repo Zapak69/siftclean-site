@@ -254,3 +254,6 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -.0
 .nf-code .logo-anim { width: .95em; height: .95em; }
 .nf .cta { margin-top: 8px; }
 .nf + .footer { border-top: none; padding-top: 0; }
+.pill.big { height: 52px; padding: 0 28px; font-size: 16px; gap: 10px; }
+.pill.big svg { width: 19px; height: 19px; }
+.more .section-lead { color: var(--muted); font-size: 18px; margin: 14px 0 0; max-width: 560px; }

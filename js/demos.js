@@ -117,7 +117,8 @@
     ex.innerHTML = `
       <div class="aw-tool"><span class="aw-nav">${I.back}</span><span class="aw-crumbs" id="exCrumbs"><b>Macintosh HD</b></span><span class="aw-meta" id="exMeta"></span></div>
       <div class="aw-thead ex"><span>Name</span><span></span><span class="r">Modified</span><span class="r act">Size ↓</span></div>
-      <div class="aw-list" id="exList"></div>`
+      <div class="aw-list" id="exList"></div>
+      <span class="aw-cursor" id="exCursor"></span>`
     fit(ex, 760, 420)
     const list = ex.querySelector('#exList')
     const crumbs = ex.querySelector('#exCrumbs')
@@ -140,10 +141,25 @@
         render(root, 77.6)
         await wait(1800)
         const users = list.firstElementChild
+        const cur = ex.querySelector('#exCursor')
+        cur.style.transition = 'none'
+        cur.style.left = '600px'
+        cur.style.top = '380px'
+        void cur.offsetWidth
+        cur.style.transition = ''
+        cur.classList.add('on')
+        await wait(150)
+        cur.style.left = '120px'
+        cur.style.top = (users.offsetTop + list.offsetTop + 23) + 'px'
+        await wait(800)
         users.classList.add('hl')
-        await wait(700)
+        await wait(350)
+        cur.classList.add('press')
         users.classList.add('press')
         await wait(180)
+        cur.classList.remove('press')
+        await wait(120)
+        cur.classList.remove('on')
         list.classList.add('leave')
         await wait(260)
         list.classList.remove('leave', 'in')
@@ -234,7 +250,7 @@
       speed.classList.add('play')
       const el = document.getElementById('fileCount')
       const fmt = v => Math.round(v).toLocaleString('en-US')
-      reduce ? el.textContent = fmt(1284551) : count(el, 0, 1284551, 2600, fmt)
+      reduce ? el.textContent = fmt(1155750) : count(el, 0, 1155750, 2600, fmt)
     })
   }
   const langs = document.querySelectorAll('#langList li')

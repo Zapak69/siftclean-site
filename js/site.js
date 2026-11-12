@@ -180,7 +180,7 @@ api({ action: 'public' }).then(r => {
 
 const bill = document.getElementById('bill')
 if (bill) {
-  let mode = 'lifetime'
+  let mode = 'monthly'
   const euro = v => '€' + v.toFixed(2)
   const tween = (el, from, to) => {
     if (reduceMotion) return el.textContent = euro(to)
@@ -231,7 +231,10 @@ if (bill) {
 
 const claimEl = document.getElementById('claim')
 if (claimEl) {
-  const token = new URLSearchParams(location.search).get('t') || ''
+  const q = new URLSearchParams(location.search)
+  const token = q.get('t') || ''
+  const payment = q.get('payment_id') || q.get('receipt_id') || ''
+  const req = /^pay_[A-Za-z0-9]{6,40}$/.test(payment) ? { action: 'claim', payment } : /^[a-f0-9]{40}$/.test(token) ? { action: 'claim', token } : null
   const box = document.getElementById('keyBox')
   const fail = () => {
     box.classList.add('failed')
@@ -260,11 +263,11 @@ if (claimEl) {
     btn.querySelector('span').textContent = 'Copied'
     setTimeout(() => { btn.classList.remove('done'); btn.querySelector('span').textContent = 'Copy' }, 2000)
   })
-  if (!/^[a-f0-9]{40}$/.test(token)) fail()
+  if (!req) fail()
   else {
     let tries = 0
     const poll = async () => {
-      const r = await api({ action: 'claim', token })
+      const r = await api(req)
       if (r && r.ok) return show(r)
       if (r && r.error !== 'pending') return fail()
       if (++tries > 40) return fail()
