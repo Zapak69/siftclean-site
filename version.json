@@ -2,5 +2,8 @@
   "version": "1.0.0",
   "notes": "",
   "mac": "https://github.com/Zapak69/siftclean-site/releases/download/v1.0.0/SiftClean.dmg",
-  "win": "https://github.com/Zapak69/siftclean-site/releases/download/v1.0.0/SiftClean.exe"
+  "macSha256": "bfeadbadadda9c6067dc48f3f2b99fd22725b11ff95017dd01d60f787df27e41",
+  "win": "https://github.com/Zapak69/siftclean-site/releases/download/v1.0.0/SiftClean.exe",
+  "winSha256": "4c228b4c16e3c657de5c71f1dec138bec0aa5335b4cb15895fd2b42734ccf66c",
+  "sig": "WBZkEuFTELjo04+A/bzbDjJc5nt6ZZK4FQC+YX+7XCROC4zMD93HYUneT8RBOkmBpy5sCw5/BbiLYS90bgIkOKUxPg0UbnfrpRZfIr78EsvFlzAiDS5fjg96qmwHghu+cUKppadmaSwVJ5W1RfZy/FEnmtEz8NIVyYi+yaVrGEvkO5AiFJHkcH1LRX5iZMgLi+/gNe4QQFSN0tL6FRZi7O4H4z3D8ojPLUQfZXE8dp5vVLZk7HWgAOEOJDsGrFBeKphTwheZFeyNhKsNbs7VjPyqcE8FJtoNwhoW4TbDHanychz+5selrKJVxjTkV3X9K0iDfYubS5+C9vxiakIt4Q=="
 }
