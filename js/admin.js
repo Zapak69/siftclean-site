@@ -184,7 +184,7 @@ function signOut() {
   $('password').value = ''
   $('loginMsg').textContent = ''
   show('login')
-  $('password').focus()
+  $('username').focus()
 }
 
 $('loginForm').addEventListener('submit', async e => {
@@ -194,12 +194,12 @@ $('loginForm').addEventListener('submit', async e => {
   btn.innerHTML = '<span class="spinner"></span>'
   $('loginMsg').textContent = ''
   try {
-    const r = await call({ action: 'login', password: $('password').value })
+    const r = await call({ action: 'login', user: $('username').value, password: $('password').value })
     if (r.ok) {
       setToken(r.token)
       enter()
     } else {
-      const msgs = { invalid: `Wrong password${r.attemptsLeft != null ? ` · ${r.attemptsLeft} attempts left` : ''}`, locked: 'Too many attempts. Try again in 15 minutes.', not_configured: 'Admin password is not set on the server.' }
+      const msgs = { invalid: 'Wrong username or password', locked: 'Too many attempts. Try again in 15 minutes.', not_configured: 'Admin password is not set on the server.' }
       $('loginMsg').textContent = msgs[r.error] || 'Sign in failed'
       $('loginForm').classList.remove('shake')
       void $('loginForm').offsetWidth

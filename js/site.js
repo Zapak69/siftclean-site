@@ -263,12 +263,17 @@ if (claimEl) {
     btn.querySelector('span').textContent = 'Copied'
     setTimeout(() => { btn.classList.remove('done'); btn.querySelector('span').textContent = 'Copy' }, 2000)
   })
+  const saved = req ? (() => { try { return JSON.parse(sessionStorage.getItem('sc_claim_' + (payment || token)) || 'null') } catch { return null } })() : null
   if (!req) fail()
+  else if (saved) show(saved)
   else {
     let tries = 0
     const poll = async () => {
       const r = await api(req)
-      if (r && r.ok) return show(r)
+      if (r && r.ok) {
+        try { sessionStorage.setItem('sc_claim_' + (payment || token), JSON.stringify({ license: r.license, plan: r.plan })) } catch {}
+        return show(r)
+      }
       if (r && r.error !== 'pending') return fail()
       if (++tries > 40) return fail()
       setTimeout(poll, 3000)

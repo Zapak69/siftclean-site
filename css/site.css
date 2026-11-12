@@ -92,7 +92,7 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -.0
 .social { display: flex; gap: 48px; justify-content: center; margin-top: 56px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .social b { display: block; margin-bottom: 4px; color: var(--text); font-size: 30px; font-weight: 600; line-height: 1.1; letter-spacing: -.035em; text-transform: none; }
 .footer { padding: 60px 0 36px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
-.foot-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .foot-cols div { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
 .foot-cols b { color: var(--text); font-weight: 500; margin-bottom: 6px; }
 .foot-cols a { transition: color .2s; }
