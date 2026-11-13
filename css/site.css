@@ -257,3 +257,36 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -.0
 .pill.big { height: 52px; padding: 0 28px; font-size: 16px; gap: 10px; }
 .pill.big svg { width: 19px; height: 19px; }
 .more .section-lead { color: var(--muted); font-size: 18px; margin: 14px 0 0; max-width: 560px; }
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 40px); }
+  .nav { padding: 0 20px; }
+  .hero { gap: 40px; padding: 56px 0 10px; }
+  .logo-anim { width: 150px; height: 150px; }
+  h1 { font-size: 38px; }
+  .hero-tags { font-size: 11px; }
+  .facts { gap: 18px 28px; padding: 56px 0 10px; font-size: 14px; }
+  .facts svg { width: 19px; height: 19px; }
+  .feature { padding-top: 96px; }
+  .feature-body { margin-top: 26px; gap: 28px; }
+  .claim { font-size: 20px; margin-bottom: 18px; }
+  .more { padding-top: 96px; }
+  .more .section-lead { font-size: 16px; }
+  .bento { margin-top: 30px; }
+  .tile.big { min-height: 400px; }
+  .cta-final { padding: 100px 0 90px; }
+  .cta-final h2 { font-size: 44px; margin-bottom: 30px; }
+  .cta .pill.big { width: 100%; }
+  .social { gap: 22px; }
+  .social b { font-size: 24px; }
+  .footer { padding-top: 44px; }
+  .foot-bottom { margin-top: 40px; }
+  .pricing { padding: 56px 0 90px; }
+  .pr-lead { font-size: 16px; }
+  .plan-price b { font-size: 38px; }
+  .doc { padding: 50px 0 80px; }
+  .thanks { padding: 60px 0 90px; }
+  .key-card { padding: 18px; }
+  .key-box { flex-direction: column; align-items: stretch; padding: 12px; }
+  .key-box code { text-align: center; font-size: 15px; }
+  .faq-group summary { font-size: 16px; }
+}

@@ -26,10 +26,13 @@
   }
   const fit = (win, w, h) => {
     const box = win.parentElement
-    win.style.width = w + 'px'
     win.style.height = h + 'px'
     const apply = () => {
-      const k = box.clientWidth / w
+      const narrow = box.clientWidth < 600
+      const dw = narrow ? 500 : w
+      win.classList.toggle('narrow', narrow)
+      win.style.width = dw + 'px'
+      const k = box.clientWidth / dw
       win.style.transform = `scale(${k})`
       box.style.height = h * k + 'px'
     }
@@ -143,7 +146,7 @@
         const users = list.firstElementChild
         const cur = ex.querySelector('#exCursor')
         cur.style.transition = 'none'
-        cur.style.left = '600px'
+        cur.style.left = (ex.offsetWidth - 160) + 'px'
         cur.style.top = '380px'
         void cur.offsetWidth
         cur.style.transition = ''
